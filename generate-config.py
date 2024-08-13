@@ -98,6 +98,7 @@ def main():
     wgc = WGConfig(config_file)
     wgc.add_attr(None, 'Address', pia.connection['peer_ip'])
     wgc.add_attr(None, 'PrivateKey', pia.privatekey)
+    wgc.add_attr(None, 'MTU', '1384')
     for dns_server in pia.connection['dns_servers'][0:2]:
         wgc.add_attr(None, 'DNS', dns_server)
     peer = pia.connection['server_key']
